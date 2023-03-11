@@ -1,0 +1,56 @@
+type Track {
+    id: String
+    href: String
+    name: String
+    popularity: Int
+    preview_url: String
+    type: String
+    album: Album
+    artists: [Artist]
+}
+type Tracks {
+    href: String
+    items: [Track]
+}
+type TracksInPlaylist {
+    href: String
+    items: [AddedTrack]
+}
+type AddedTrack {
+    added_at: String
+    added_by: User
+    track: Track
+}
+type Album {
+    href: String
+    id: String
+    name: String
+    release_date: String
+    total_tracks: Int
+    tracks: Tracks
+}
+type Artist {
+    id: String
+    genres: [String]
+    name: String
+    popularity: Int
+}
+type Playlist {
+    id: String
+    description: String
+    name: String
+    public: String
+    tracks: TracksInPlaylist
+}
+type User {
+    href: String
+    id: String
+}
+type Query {
+    track(id: String): Track
+    album(id: String): Album
+    artist(id: String): Artist
+    playlist(id: String): Playlist
+    myPlaylists: [Playlist]
+    tracksFromPlaylist(id: String): [Track]
+}
