@@ -1,3 +1,5 @@
 /apollo/node_modules/
 /express-graphql/node_modules/
 /spotify-authorization/node_modules/
+/nestJs/test-project/node_modules/
+/nestJs/test-project/dist/
